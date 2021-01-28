@@ -1,0 +1,1121 @@
+[{
+  "_id": {
+    "$oid": "5f2a431d714938002e68eb85"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "500c0c1d41e596e5578deb9eab580bc7be08beb5bbc529101aaf2c3e53bab318"
+  }
+},{
+  "_id": {
+    "$oid": "5f3453978e354ab992c4da79"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "c3ba97a65089f19b3f24bfeb425b18aaca2e18e040bb4b4aa61ce28f130c18e9"
+  }
+},{
+  "_id": {
+    "$oid": "5f3585a6673a2923d229867d"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "dbe38c3dcc013e92f1bb85ab533bf9f3ef6b94902c4b0e52d79fd26f999eccde"
+  }
+},{
+  "_id": {
+    "$oid": "5f372126b465a08ccdfe07a8"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "43c2f3374f6c43e0d2af005b802b4419e1a61ba7607c54d5e4d8000bf352adb7"
+  }
+},{
+  "_id": {
+    "$oid": "5f3ab133f7ca96c59972ff51"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "2c6d8f99d79d7593375dbbe3af31521fcaebc4fc1e2a0dafdd0c04c7b9eb41ac"
+  }
+},{
+  "_id": {
+    "$oid": "5f3c25f2a724addaab54c95c"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "7b9bd353d1e2d4ce9c9d9270e68e04aee0094f1660bf1309c154ab7e02f95ebe"
+  }
+},{
+  "_id": {
+    "$oid": "5f3d6beb8644f8286c02406d"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "2f0a91447146bf1155d2e21070ca7c6897d630f7b5c361ed3aa59c8ddb11e72d"
+  }
+},{
+  "_id": {
+    "$oid": "5f3d6cd68644f8286c02406e"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "9e127f89743bc0b508f9f1a0b06d39eb7bef37695fd69c7a1acbf6e8ec028f30"
+  }
+},{
+  "_id": {
+    "$oid": "5f3d6d2c8644f8286c02406f"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "cdee9bc97dc70e2277b7862145e5fe28c6648b588864b9796038ec3a3db3fd96"
+  }
+},{
+  "_id": {
+    "$oid": "5f3d6d9c8644f8286c024070"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "ef774d4bfa7639152b5d8cf8468802235d6c19aeb9f0cea96e07f0e6268d9d1a"
+  }
+},{
+  "_id": {
+    "$oid": "5f3ed1839014bdfddc6e1c62"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "06e7d1867f9f24cb997d24bb0371f7ebb45f9727c45f446f236a91df680b27fa"
+  }
+},{
+  "_id": {
+    "$oid": "5f3ed4059014bdfddc6e1c64"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "25c2aaf5f10696a4538179d12c34639fd07c3a774ffeb324a23debd9f554f76f"
+  }
+},{
+  "_id": {
+    "$oid": "5f44300554b6de49c5f12cdf"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "425016cfa73b4fcb8a51127a12af45d86926672c1a7ca5c693bcacb2df0a8e10"
+  }
+},{
+  "_id": {
+    "$oid": "5f46739e2164c49f99af2480"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "d17e43a4179a115e1e389e94c6c71a9e207e5332688226326fb32329d99880bf"
+  }
+},{
+  "_id": {
+    "$oid": "5f49668fdbb2d7b64de0cd46"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "d7160123f0cc8a1a0eb21322d4ee35947b9268ca086b8a360cd3ee251a8dcbc3"
+  }
+},{
+  "_id": {
+    "$oid": "5f49681fdbb2d7b64de0cd47"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "86f4ba839e48d34b51834f6e36b64b0ab9dcd7b7b3175492c81df35387f744f2"
+  }
+},{
+  "_id": {
+    "$oid": "5f59705f0ca3738edeb4da8f"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "c254bcac908fb9db731eed205ab033e13dea50f6e6e97a8686c9db0d892c4d19"
+  }
+},{
+  "_id": {
+    "$oid": "5f5971180ca3738edeb4da90"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "e5d56f17e41e90e0c9f0c76f0723313b24d0827a87ada0350530217c8d719e72"
+  }
+},{
+  "_id": {
+    "$oid": "5f5972180ca3738edeb4da91"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "52abb3043a021a3b8ed336e01ca37f0c010bebb7266656b6efcf818680509dec"
+  }
+},{
+  "_id": {
+    "$oid": "5f62b2f8be3591c4dea85665"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "dca12268b56f54d064f6e9a05ecfc62b345b70e719e7eaf39e15acf09e42afbf"
+  }
+},{
+  "_id": {
+    "$oid": "5f62b402be3591c4dea85666"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "390aff4a784cab11c92617e9fd496e8f0e9286d12a9df19f01047995881a34e9"
+  }
+},{
+  "_id": {
+    "$oid": "5f62b485be3591c4dea85667"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "1b74bc3a4f61583159ca9a4702687d68bb478321f278e08e686db318befca21a"
+  }
+},{
+  "_id": {
+    "$oid": "5f62b4d8be3591c4dea85668"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "8680faa1b8c324249cebd024e225f348eccd0fe9d877531cc8a22c16767f8893"
+  }
+},{
+  "_id": {
+    "$oid": "5f62b544be3591c4dea85669"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "6dbc44757fff43d31342dcba52a7a629fb830083ac225a347452620e833a0dbc"
+  }
+},{
+  "_id": {
+    "$oid": "5f62b5fbbe3591c4dea8566a"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "7eaceace60765c8bb544038e14dc8c26455df82f55f8edd753a0459ff8361feb"
+  }
+},{
+  "_id": {
+    "$oid": "5f62b64fbe3591c4dea8566b"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "306bc76aec5b0d9ff5e12c2de91506a3a1df9d254c11dee3d705a85d74385d0c"
+  }
+},{
+  "_id": {
+    "$oid": "5f62b71abe3591c4dea8566c"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "b6ec569189cb6b6eb75d261a25881cac64ce761e839cec42767e7b19d69832f9"
+  }
+},{
+  "_id": {
+    "$oid": "5f62b7d8be3591c4dea8566d"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "2e2271e30237e1e80c9c23db5d00533e9ad9a21285269f81544d807c88ee667c"
+  }
+},{
+  "_id": {
+    "$oid": "5f62b84dbe3591c4dea8566e"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "a3edc0d94701ce5e0692754b519ab125c921c704f11439638834894a5ec5fa53"
+  }
+},{
+  "_id": {
+    "$oid": "5f63845579e550141768a451"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "d519376d15a91f2a71b015eb062bcd6cfb1b0b22cb86badf44f594f449f2cd22"
+  }
+},{
+  "_id": {
+    "$oid": "5f6bbd1b8cd7cd1e719c5f53"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "d83227716d96346d1292b0a3e4b8ec89fd0e5971916e151a5006cb1cf5a11057"
+  }
+},{
+  "_id": {
+    "$oid": "5f6bd7a68cd7cd1e719c5f54"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "80aeebd348bebcb65c13be91f12af8c86d529041b5eb7c10b8750c8a683f39a4"
+  }
+},{
+  "_id": {
+    "$oid": "5f6bd81d8cd7cd1e719c5f55"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "de4a11a354a7ced3a726962cce2e1b0c58b5e7227eb9f4ad5c89036dbba33bf1"
+  }
+},{
+  "_id": {
+    "$oid": "5f6bd8928cd7cd1e719c5f56"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "78e0280b9ee33bfbe8b4f31ffd20b6e4e7d5c982aec1b635240140c3a338e28d"
+  }
+},{
+  "_id": {
+    "$oid": "5f6bd9008cd7cd1e719c5f57"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "c60e134bc09c70a5696e7fa031725cb92df763ca8661867fc68be3855c8d66a4"
+  }
+},{
+  "_id": {
+    "$oid": "5f6cfd72510a12fce206593e"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "8c4fa8c7662a832ca47f2be0736589dbdcf60d3969dbacd950d65c2354c3b37b"
+  }
+},{
+  "_id": {
+    "$oid": "5f738a9793e536f0c0e6e69a"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "c17cf7d591b2b6e2604789da8e6f96061f7d71c0c70bdd865773c552f89a74f3"
+  }
+},{
+  "_id": {
+    "$oid": "5f738f8a17acaaedc35c0f55"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "c17cf7d591b2b6e2604789da8e6f96061f7d71c0c70bdd865773c552f89a74f3"
+  }
+},{
+  "_id": {
+    "$oid": "5f75f95381e27b002e6aaada"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "7a80a331c20cb0ac9e30a0d0c68df5f334b9c8bbe10dcfd95b6cb42bf412037c"
+  }
+},{
+  "_id": {
+    "$oid": "5f75fa9881e27b002e6aaadc"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f75ff5f81e27b002e6aaae2"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "99b665755b6b6324e66cd009f0eeaf5fa245b1eae048decf1ead15d52740d720"
+  }
+},{
+  "_id": {
+    "$oid": "5f760417b90218002e9ce97f"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "05fcead805e5e5499072a1400370dcebe721cdb9de7ab0af641503dbd180cb6d"
+  }
+},{
+  "_id": {
+    "$oid": "5f760c6ab90218002e9ce982"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f76124fb90218002e9ce985"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "08f64448c019a616bfb856d9459017c6cdf4814cf5c091d824ecab98c302e761"
+  }
+},{
+  "_id": {
+    "$oid": "5f76302eb90218002e9ce988"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f764070b90218002e9ce98e"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "0e93a0ae8d5e4c704a77b043674cb894ee2c6c7d6e63d030cf7a7f68b5450ad7"
+  }
+},{
+  "_id": {
+    "$oid": "5f764158b90218002e9ce98f"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f7648aab90218002e9ce993"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "e7b5b619b1240eb414983ec485d32e30418dbf18c7cd7c662c8ac150f7651c6b"
+  }
+},{
+  "_id": {
+    "$oid": "5f76ed2ab90218002e9ce99d"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "5b311ce7488bb2cd16e1650e31bcdca078068c4841a68e671c3e30c4829fefd9"
+  }
+},{
+  "_id": {
+    "$oid": "5f76ee44b90218002e9ce99f"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "de080e98fac2a0dd9c1cc78ef6a973c5caa2a34824e2eebda10e5ac8caff3afe"
+  }
+},{
+  "_id": {
+    "$oid": "5f76ef21b90218002e9ce9a2"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f7741a9258381a30b0f956d"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "02e5b8fbde9b5177f2945e63eeaaecf9b77aa0395001dd969c3904d96f6c92c5"
+  }
+},{
+  "_id": {
+    "$oid": "5f774212258381a30b0f956e"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "e01ba8b7c16e105d913f56847ddd87ab7849bafc44a6de5dc81cd8db1726ed79"
+  }
+},{
+  "_id": {
+    "$oid": "5f7742cb258381a30b0f956f"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "4854d41d0ea4c391d539195ccc7fbcf252053a27276221e6962d25cccd8846a0"
+  }
+},{
+  "_id": {
+    "$oid": "5f774342258381a30b0f9570"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "70371ec385ed223d390e120101dd3371fac66824e3cf4b0bb07e7a6b27cdc884"
+  }
+},{
+  "_id": {
+    "$oid": "5f774448258381a30b0f9571"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "48555bfb7c285c79216b1854767efc3ea10ede65ec6353726586c4ffe4cab089"
+  }
+},{
+  "_id": {
+    "$oid": "5f7746a9258381a30b0f9572"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "8a09d46649a982c3971c2bd03bfd07f0ecc00263e4b59a4134b263e6941610b1"
+  }
+},{
+  "_id": {
+    "$oid": "5f77477146f342a3d906a313"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "753456d4b2c502cd2031c45c0eb1650b68e19f4b9e2d55d09e0f1915df4e0444"
+  }
+},{
+  "_id": {
+    "$oid": "5f7747da6154fde597b1efec"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "dee2b655782efba1868ccfd926e547ee0f01f56b2d6427debeeab4a4de94a87f"
+  }
+},{
+  "_id": {
+    "$oid": "5f77482dcad91b8db7625fb4"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "a6d9d6561df5fbc7e4dec93852744e6ca594d993d31e7884de25643e27ce0b74"
+  }
+},{
+  "_id": {
+    "$oid": "5f77488682b257e62ff3390e"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "d0b2b5dbc4520e3796b6a945f5fc56100e7c20f1452eac03a7b539506cab94d8"
+  }
+},{
+  "_id": {
+    "$oid": "5f77a41ab90218002e9ce9ab"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "ee7f91926c568e4b6241b3c35888616d130be480b7dd7d253a115d5996cdc623"
+  }
+},{
+  "_id": {
+    "$oid": "5f787dc4b90218002e9ce9ae"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f7c9a24b90218002e9ce9b5"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "b4e7116b8c2fc8f2b0b2ae6be06d26994b7c1ec5af3b41c16be4a70f41a51c39"
+  }
+},{
+  "_id": {
+    "$oid": "5f7c9b8db90218002e9ce9b7"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "35d47b233f0bbf144f8b1ef1de4d1ba6bbda411362a2c63785ea256e96fb5c75"
+  }
+},{
+  "_id": {
+    "$oid": "5f7cbeabb90218002e9ce9bc"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "296b73aa069662b0bb2303fc7f5c8d5eec1d61d6d6d5049abf758c796a2ea8aa"
+  }
+},{
+  "_id": {
+    "$oid": "5f7cca33b90218002e9ce9be"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "d4c45c71482d13e4d7a80d9935bc0647df069a5135fe0074f74fdf467b205f4c"
+  }
+},{
+  "_id": {
+    "$oid": "5f7ccb05b90218002e9ce9c1"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "0a776629750d9a42a121644cff6097fe84fd8e04e89fd5c840d5f1ca31f7c913"
+  }
+},{
+  "_id": {
+    "$oid": "5f7d6034b90218002e9ce9c7"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "0d973abeb8cf74811a7b01a0baa1b09d381990174502d3e5744e96993467ed06"
+  }
+},{
+  "_id": {
+    "$oid": "5f7dcb86b90218002e9ce9cb"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f7dcec1b90218002e9ce9cc"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f7e138bb90218002e9ce9cd"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "bfe994e2c0afae366739a0a879396522ab625d79fffcb19442faa71b778b9bd1"
+  }
+},{
+  "_id": {
+    "$oid": "5f7efe96b90218002e9ce9d3"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "98c2e1be1e4aac38ffffb9c1b95d8d0e4ab7dd7a6b073085dac8e4d6eda5b592"
+  }
+},{
+  "_id": {
+    "$oid": "5f7f844cb90218002e9ce9db"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "d2327539d0ed71673134ce7ce88c680aba1ce7e4ae87480780705c98f4217188"
+  }
+},{
+  "_id": {
+    "$oid": "5f7f8547b90218002e9ce9dd"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "c3a910df87127b381922d775f700823be3606181927e0d155b3f7ff256b24392"
+  }
+},{
+  "_id": {
+    "$oid": "5f7f9dd2b90218002e9ce9e1"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "73ca334c862d07820cfc015b37a4e89c7a61686fd26e2201f8fc2529d314baa6"
+  }
+},{
+  "_id": {
+    "$oid": "5f81dc2bb90218002e9ce9e7"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "072ac793388f65029035af8f42b02871d789c03e0c04fd505302cfae62c7a848"
+  }
+},{
+  "_id": {
+    "$oid": "5f81edd7b90218002e9ce9ea"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "4fc154ca8259f60c26f9064073f71d2143f154ad4fc0de2105ee99c01f41f8b3"
+  }
+},{
+  "_id": {
+    "$oid": "5f84887cb90218002e9ce9f3"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "1e837359a48c2b9ca2401c2727ca5b00e37cdf9f55577042143ff4afba57e9c3"
+  }
+},{
+  "_id": {
+    "$oid": "5f84bc55b90218002e9ce9f5"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "5529aec38381396f04143ed347fc5642f678d2c72cdb940e2ebea0d0f8e97215"
+  }
+},{
+  "_id": {
+    "$oid": "5f84c08ab90218002e9ce9fb"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f84c3b8b90218002e9ce9fd"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "b545dcaf833e6b446821e8187c6cb34105ffa62c4e063f08c51b0f80a3f2daec"
+  }
+},{
+  "_id": {
+    "$oid": "5f84c75ab90218002e9cea00"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "dfb178390749308e89be18950b20c7dfaf41016324ef0a23c13a4c32703b151f"
+  }
+},{
+  "_id": {
+    "$oid": "5f85e64eb90218002e9cea06"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f8628e0b90218002e9cea08"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "dc4895ee09fa327347e080f0a6f6b54af3faae16a61560841411fa5c303efc9f"
+  }
+},{
+  "_id": {
+    "$oid": "5f877a80b90218002e9cea0c"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "8a8f90bd5ae12f1bdcb015880a1858a18eeb2edb6a7d6d718f2cc25a85ca2009"
+  }
+},{
+  "_id": {
+    "$oid": "5f8788b7b90218002e9cea12"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "5aacc201efaeee088f16ebaecb1411dc62bfa250598793b0cccf19705c8f5da4"
+  }
+},{
+  "_id": {
+    "$oid": "5f889515b90218002e9cea16"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "11c0dcb8d06e90f66115bba2edad31aff9bed590bad4698fe23e1687e0b1fadb"
+  }
+},{
+  "_id": {
+    "$oid": "5f89c16ab90218002e9cea1b"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "9f39576b74647746edc21be759729d3b3ea2915b7ac6bd15dafecd6da64afab9"
+  }
+},{
+  "_id": {
+    "$oid": "5f89c1abb90218002e9cea1d"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "487fe596db50bfdc516291ef4ca10c31698c2f80295efdb74f8a3743da198276"
+  }
+},{
+  "_id": {
+    "$oid": "5f8b0cbcb90218002e9cea26"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f8b0ccdb90218002e9cea27"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "db686eb016188b2b347783fe07590c07012371419a2ffe07786b0d24969d1630"
+  }
+},{
+  "_id": {
+    "$oid": "5f8b320bb90218002e9cea2b"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "d345983e1cc4cc71a762472f6017acc561fb1ad94b50fda5d03796838bc4cdfb"
+  }
+},{
+  "_id": {
+    "$oid": "5f8b4b88b90218002e9cea2e"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f8b574eb90218002e9cea30"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "78da512308fb06a57c55f61721a56e195a03686d322ff3ba6b3047d7e5f60ad9"
+  }
+},{
+  "_id": {
+    "$oid": "5f8be286b90218002e9cea34"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "d74ae27c6fe95533a9526f8e32bb1f3962fb65a0ce64a335a06a643a8363f6ac"
+  }
+},{
+  "_id": {
+    "$oid": "5f8be66bb90218002e9cea37"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f8c0233b90218002e9cea39"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "d40be77e3b7cd9b1e74133ce09d3e02fbb4fa6c95ff8866219b8f8bd3642046f"
+  }
+},{
+  "_id": {
+    "$oid": "5f8cebfcb90218002e9cea3f"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "02e0b30b247b9f3ce5cd59245340d3faba4e7e4c0e640825d024a9501f5f8237"
+  }
+},{
+  "_id": {
+    "$oid": "5f8d8868b90218002e9cea46"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "41da762e363d90283f43034c59eeee12891e8d80ef0734519600d84871a0d872"
+  }
+},{
+  "_id": {
+    "$oid": "5f8e0060b90218002e9cea4a"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "23f64503ad1d4a7a12c42e2bebb2f8fd3edbb3edfc6099706ac8d0280bbb44db"
+  }
+},{
+  "_id": {
+    "$oid": "5f8e52f16b624a0541cdd0f1"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "88bfb0aabe68131679516012334f6f88dc9a57d285cb293b7470407f0ec58bab"
+  }
+},{
+  "_id": {
+    "$oid": "5f8f5e0cb90218002e9cea4f"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "8108dbec0a48c19c31e796d517ad3b4024a2766e15946ca26cf73cd7e4d8abf5"
+  }
+},{
+  "_id": {
+    "$oid": "5f8fed4db90218002e9cea54"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "e8d91f3fd8d42ec11617665c3def5356e07417e0498b8f5b3c434c226b49e121"
+  }
+},{
+  "_id": {
+    "$oid": "5f8fee9fb90218002e9cea56"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "02809b1c6e4c9c96eff693e835bb5c4731981fc3138feb47a0fc33d4be59734f"
+  }
+},{
+  "_id": {
+    "$oid": "5f903bfab90218002e9cea5e"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "0ad8cd6e3be0cc4de24838caf09f231e0257bcade93f5e02b534beebac4ddb17"
+  }
+},{
+  "_id": {
+    "$oid": "5f906ae2b90218002e9cea61"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "65958e6f1e559f6b4802842eecb228ca262f874c02437a08dca2517a70f6a99a"
+  }
+},{
+  "_id": {
+    "$oid": "5f9180e3b90218002e9cea69"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "f5a5a5296e02c6d844de7c6c6fd5d083a6ba67c01d74d0a263e76d04803b5e88"
+  }
+},{
+  "_id": {
+    "$oid": "5f91ab00b90218002e9cea6e"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "0974bce8f1461bf66f9a99d26df9c2f12e0ed30737b50797a8f0bae65ddba180"
+  }
+},{
+  "_id": {
+    "$oid": "5f91f9a5b90218002e9cea72"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5f92020ab90218002e9cea74"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "5278a9f986818419e5b0e8e16a2406e8c04ee87ffa1eaf439c024dc21d0ee05b"
+  }
+},{
+  "_id": {
+    "$oid": "5f9205e2b90218002e9cea78"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "5492647fc324174f9f0dd5bb920ab5ca5eed5edbebee68eb0d88927a5331026c"
+  }
+},{
+  "_id": {
+    "$oid": "5f93f149b90218002e9cea8e"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "9b1d78f7458ec3ffc19cfcc108d0de1719fbf7b51608c25354e2b0641f8c8775"
+  }
+},{
+  "_id": {
+    "$oid": "5f93f292b90218002e9cea90"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "823d3939401dfcbfeba684095ae1314711a72555350140feefdbd2981c58b783"
+  }
+},{
+  "_id": {
+    "$oid": "5f95b42cb90218002e9cea94"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "3f173600fd5203cc4fabb7389cb0d44bac0e800fe4d92ba89416c8214fcd27c1"
+  }
+},{
+  "_id": {
+    "$oid": "5f97d5d6b90218002e9cea9d"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "5ecea2eae235d3f6e61a1d24d6a9e26d6672eb074056302b59bfcce6f4611456"
+  }
+},{
+  "_id": {
+    "$oid": "5f97dc56b90218002e9ceaa0"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "ed3cd14037a600ebd507fbd11da3137bb8e58fa3d574b59efbba12d4c389fb99"
+  }
+},{
+  "_id": {
+    "$oid": "5f9b0410b90218002e9ceaa4"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "4cdf5b3225082441fbb1d0b3870b2e12b84ae70fc2c531d4b6d7fa4b52f7c6c3"
+  }
+},{
+  "_id": {
+    "$oid": "5f9cb20cb90218002e9ceaac"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5fa15b35b90218002e9ceab4"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "cf28f547b3ac8cb910213868941129b24d14d0440073e335555dd997c943d55e"
+  }
+},{
+  "_id": {
+    "$oid": "5fa2d81db90218002e9ceabc"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "b146fb35729611bd98e15f4cd45965dd99952aba346316e985d03ea3a4e3d92a"
+  }
+},{
+  "_id": {
+    "$oid": "5fa2f857b90218002e9ceabf"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "512d9b88126c0147eaa4a9cd61caf758cc371a6b638679454769e84df8f61aad"
+  }
+},{
+  "_id": {
+    "$oid": "5fa2f858b90218002e9ceac0"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "c7ebb371f4d70b55ccafc3e0055bd5bd8e05803b6eeba0af509232746f0f8c42"
+  }
+},{
+  "_id": {
+    "$oid": "5fa3006fb90218002e9ceac6"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "3389e003a45e0eb59eec816cb00a25dc9d18f1ae9bb3a6786b8cb2031f19b738"
+  }
+},{
+  "_id": {
+    "$oid": "5fad6fa0b90218002e9ceae4"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "f7b8805c1a6da2cfe6f751f3349392001f01e27b35cc7f52b1a1084450fe735a"
+  }
+},{
+  "_id": {
+    "$oid": "5fb3cfa2b90218002e9ceaf9"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5fb3d8b532a44f002e3bf0db"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "beb17e558b0ba029b3930d3d3e9c65b61368c4ebd74d53a5026906de5f27e303"
+  }
+},{
+  "_id": {
+    "$oid": "5fb3d8f032a44f002e3bf0dd"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "02ad08c991ad583e1e0b711f2e81735aa5440a5e30a81819ec3d582bb5af9a9e"
+  }
+},{
+  "_id": {
+    "$oid": "5fb401f732a44f002e3bf0e1"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "219a04c0436897db2b889a468d3713ec5cb0b72df01f4a41c22f90daa9c1518b"
+  }
+},{
+  "_id": {
+    "$oid": "5fb51cef7c6654002ed13322"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "d42127db644b397b7e66f1207bf79c0ec5380d8816d114c3e308bc232c3547e6"
+  }
+},{
+  "_id": {
+    "$oid": "5fbb79057c6654002ed1332a"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5fbb7c677c6654002ed1332c"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "83c87a2b0a7f998e55ce83bfb5e43f32f94e622bc4cd7916a7016e6f65bdf6f3"
+  }
+},{
+  "_id": {
+    "$oid": "5fbb7dfa7c6654002ed1332f"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "dffeefaee4e40137b95fff7efdeabc6f1bac076522eb05b008f4423748985f2e"
+  }
+},{
+  "_id": {
+    "$oid": "5fbc16677c6654002ed13333"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5fbd47cb7c6654002ed13337"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "07fd0f3dbc06ddac98f71aa3042994dc9bc7e5d4b455267af837f81b834f55fb"
+  }
+},{
+  "_id": {
+    "$oid": "5fbd49e37c6654002ed1333b"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "4497513e2d3aacd7a2173af6ef4411b765e2f67903321519f206fe561d3f2960"
+  }
+},{
+  "_id": {
+    "$oid": "5fbd4c887c6654002ed1333f"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5fbdf5cc7c6654002ed13344"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5fbe336e7c6654002ed13347"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5fc289877c6654002ed1334b"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "8b3c2cb3d7bd65d8fa7f2a1296124a9d0f7f4ce1e3b3d515bb2ab90e2df8822a"
+  }
+},{
+  "_id": {
+    "$oid": "5fc677007c6654002ed13350"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "ae772db6c45bdd97964f5b941a98e86aec886c90a06614f185f40fd2935f5e96"
+  }
+},{
+  "_id": {
+    "$oid": "5fc84f767c6654002ed13357"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "b078f67fef848c1feed286fa256db389e69fe32823609b9a0ceb19f3f29f8566"
+  }
+},{
+  "_id": {
+    "$oid": "5fc922327c6654002ed1335c"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "6c998dc17d6b51afa22b904e3f8f507262dad8e43e1aa2d5a65a699ae3cf5123"
+  }
+},{
+  "_id": {
+    "$oid": "5fc9394f7c6654002ed13360"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "ccabe4d755b2205c3a63e0bd7d6d530ff418459ac4909c8868c0634be73ea1b5"
+  }
+},{
+  "_id": {
+    "$oid": "5fc9dfee7c6654002ed13366"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5fd142627c6654002ed13372"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "f6908152855e2d148fdb439343972affd9f44d234df1fc811e7acd0c6dde6869"
+  }
+},{
+  "_id": {
+    "$oid": "5fd184187c6654002ed13376"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "1b7e73790e484506e33ba5bdbdc28a628e6b2c17330850bca4b8d242b9504f23"
+  }
+},{
+  "_id": {
+    "$oid": "5fd2d1d87c6654002ed1337e"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "28567c93ddf2e77e92934c90e5e1f9fe28d97e6c55e2ecca904cc8e88a2e00e4"
+  }
+},{
+  "_id": {
+    "$oid": "5fd57e457c6654002ed13383"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "3fe4027032614325e955f85333725b9ee15e3b7c4ab1c7c399ac0010d2a913c9"
+  }
+},{
+  "_id": {
+    "$oid": "5fd61fb37c6654002ed13388"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "5a61bd6852b575a121e4090ebcc8574545f2951bf9990f6f1026653450905edb"
+  }
+},{
+  "_id": {
+    "$oid": "5fe11eda7c6654002ed13398"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "b7784497a2462888e9abffe404555b6bc4d46dad1fcb7580cd2da02f2fe449ea"
+  }
+},{
+  "_id": {
+    "$oid": "5fe30ace7c6654002ed1339f"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "6d130dfdbbcf22570dc64b70151b24a9a1f1c0963a8f617952695fea3f6f5dc6"
+  }
+},{
+  "_id": {
+    "$oid": "5fe495a97c6654002ed133ad"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5fe4b7637c6654002ed133ae"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": ""
+  }
+},{
+  "_id": {
+    "$oid": "5fe7b6747c6654002ed133b2"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "d0d9287318fd398d93a3e35b5f3f253008a8f69a949077d8b77ad501e663e5cf"
+  }
+},{
+  "_id": {
+    "$oid": "5fe9e0ee7c6654002ed133b8"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "1a9dd6563a5e9196918a54a4472c0979381a5a3955661228456f838f11e031b8"
+  }
+},{
+  "_id": {
+    "$oid": "5fea73a87c6654002ed133c2"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "e3f6275e78a5bc93e98a927a662693ad723906df8897900f2ed6ed91642f8b08"
+  }
+},{
+  "_id": {
+    "$oid": "5fea8b317c6654002ed133c6"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "4661c4dc86c425c722055f4f6e83d69ad4721c503634366fea50c69bcaecf3d1"
+  }
+},{
+  "_id": {
+    "$oid": "5fea8c587c6654002ed133c8"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "4b99543a5ad71385f0df3ea266397a4c53f615de64468e5fd711cb6cb1cad0f5"
+  }
+},{
+  "_id": {
+    "$oid": "5fed80007c6654002ed133d9"
+  },
+  "gatewayAAT": {
+    "applicationPublicKey": "4d4037ac6fa04bc0217e20200fc692d52539be88536922f3342d0bdf4cca284b"
+  }
+}]
