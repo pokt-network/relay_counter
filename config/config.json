@@ -1,0 +1,13 @@
+{
+  "timeline": {
+    "start": -4,
+    "end": -1,
+    "unit": "days"
+  },
+  "endpoint": "http://localhost:8081/v1",
+  "http_retry": 3,
+  "params": {
+    "blocks_per_session": 4,
+    "approx_block_time_in_min": 15
+  }
+}
