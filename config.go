@@ -96,7 +96,7 @@ func writeResultFile(result Report) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	now := time.Now().AddDate(0, 0, -1).Format("01-02-06")
+	now := time.Now().AddDate(0, 0, -1).Format("01-02-06T15:04:05")
 	err = ioutil.WriteFile("result/"+now+".json", j, os.ModePerm)
 	if err != nil {
 		log.Println("ERROR : COULD NOT WRITE REPORT FILE: ", err.Error(), "\nPRINTING TO SCREEN")

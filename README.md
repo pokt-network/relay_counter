@@ -4,7 +4,7 @@ A simple tool that counts relays during a time period
 ### How To Use
 
 1) Ensure golang 1.13+ environment is properly installed
-2) Sync Pocket Core Instance (ensure completely synced)
+2) Sync (RC-0.5.2.9) Pocket Core Instance (ensure completely synced)
 3) go get github.com/pokt-network/relay_counter
 4) cd <GOPATH>/src/github.com/pokt-network/relay_counter
 5) Edit configuration file (See details below)

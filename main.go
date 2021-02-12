@@ -14,14 +14,14 @@ func main() {
 		log.Fatal(err)
 	}
 	log.Println("Converting Timeline To Block Heights")
-	start, end, err := ConvertTimelineToHeights(c)
+	timelineReport, err := ConvertTimelineToHeights(c)
 	if err != nil {
 		log.Fatal(err)
 	}
 	log.Println("Beginning to retrieve the transactions and claims from the blockchain")
-	blockTxsMap, claimsMap, startSupply, endSupply := GetChainData(start, end, c)
+	blockTxsMap, claimsMap, startSupply, endSupply := GetChainData(timelineReport.MinHeight, timelineReport.MaxHeight, c)
 	log.Println("Creating a report from the blockchain data")
-	result := ProcessChainData(blockTxsMap, claimsMap, startSupply, endSupply)
+	result := ProcessChainData(blockTxsMap, claimsMap, startSupply, endSupply, timelineReport)
 	log.Println("Writing the result to a report file under /result/<date>.json")
 	writeResultFile(result)
 	log.Println("Done")

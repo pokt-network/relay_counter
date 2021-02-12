@@ -105,6 +105,11 @@ type SupplyRPCResponse struct {
 	Total string `json:"total"`
 }
 
+type TimelineReport struct {
+	MinHeight int64 `json:"min_height"`
+	MaxHeight int64 `json:"max_height"`
+}
+
 type Report struct {
 	TotalRelaysCompleted     int64                 `json:"total_relays_completed"`
 	TotalChallengesCompleted int64                 `json:"total_challenges_completed"`
@@ -115,6 +120,7 @@ type Report struct {
 	BadTxsMap                map[uint32]int64      `json:"bad_txs_count_by_error"`
 	NodeReports              map[string]NodeReport `json:"node_report"`
 	AppReports               map[string]AppReport  `json:"app_report"`
+	TimelineReport           TimelineReport        `json:"timeline_report"`
 }
 
 type ServiceReport struct {
@@ -138,19 +144,20 @@ type AppReport struct {
 type ClaimsMap map[int64][]pcTypes.MsgClaim
 type BlockTxsMap map[int64]rpc.RPCResultTxSearch
 
-func ConvertTimelineToHeights(config Config) (minHeight, maxHeight int64, err error) {
+func ConvertTimelineToHeights(config Config) (timelineReport TimelineReport, err error) {
 	// start and end are negative values
-	var startInBlocks, endInBlocks int64
+	var startInBlocks, endInBlocks, minHeight, maxHeight int64
+	var targetStartTime, targetEndTime time.Time
 	log.Println("Getting the latest height")
 	// get the latest height
 	latestheight, err := GetLatestHeight(config)
 	if err != nil {
-		return -1, -1, err
+		return timelineReport, err
 	}
 	log.Println("Getting the latest block")
 	block, err := GetBlock(latestheight, config)
 	if err != nil {
-		return -1, -1, err
+		return timelineReport, err
 	}
 	latestHeight := block.Block.Height
 	latestTime := block.Block.Time
@@ -158,19 +165,19 @@ func ConvertTimelineToHeights(config Config) (minHeight, maxHeight int64, err er
 	switch strings.ToLower(config.Timeline.Unit) {
 	case UnitMinutes, UnitMinute, UnitMin, UnitM:
 		log.Println("Timeline unit is minutes")
-		targetStartTime, targetEndTime := GetTargetTimes(config, latestTime, time.Minute)
+		targetStartTime, targetEndTime = GetTargetTimes(config, latestTime, time.Minute)
 		minHeight, maxHeight = GetClosestHeights(latestHeight, targetStartTime, latestTime, targetEndTime, config)
 	case UnitHours, UnitHour, UnitHr, UnitH:
 		log.Println("Timeline unit is hours")
-		targetStartTime, targetEndTime := GetTargetTimes(config, latestTime, time.Hour)
+		targetStartTime, targetEndTime = GetTargetTimes(config, latestTime, time.Hour)
 		minHeight, maxHeight = GetClosestHeights(latestHeight, targetStartTime, latestTime, targetEndTime, config)
 	case UnitDays, UnitDay, UnitD:
 		log.Println("Timeline unit is days")
-		targetStartTime, targetEndTime := GetTargetTimes(config, latestTime, time.Hour*24)
+		targetStartTime, targetEndTime = GetTargetTimes(config, latestTime, time.Hour*24)
 		minHeight, maxHeight = GetClosestHeights(latestHeight, targetStartTime, latestTime, targetEndTime, config)
 	case UnitWeeks, UnitWeek, UnitW:
 		log.Println("Timeline unit is weeks")
-		targetStartTime, targetEndTime := GetTargetTimes(config, latestTime, time.Hour*24*7)
+		targetStartTime, targetEndTime = GetTargetTimes(config, latestTime, time.Hour*24*7)
 		minHeight, maxHeight = GetClosestHeights(latestHeight, targetStartTime, latestTime, targetEndTime, config)
 	case UnitBlocks, UnitBlock, UnitB:
 		log.Println("Timeline unit is blocks")
@@ -188,6 +195,10 @@ func ConvertTimelineToHeights(config Config) (minHeight, maxHeight int64, err er
 	if minHeight < 0 {
 		err = NewInvalidMinimumHeightError(minHeight)
 		return
+	}
+	timelineReport = TimelineReport{
+		MinHeight: minHeight,
+		MaxHeight: maxHeight,
 	}
 	return
 }
@@ -261,12 +272,13 @@ func GetChainData(minHeight, maxHeight int64, config Config) (blockTxsMap BlockT
 	return
 }
 
-func ProcessChainData(txsMap BlockTxsMap, claimsMap ClaimsMap, supplyStart, supplyEnd int) (result Report) {
+func ProcessChainData(txsMap BlockTxsMap, claimsMap ClaimsMap, supplyStart, supplyEnd int, timelineReport TimelineReport) (result Report) {
 	log.Println("Chain Data Process Operation Started")
 	result = Report{
-		BadTxsMap:   make(map[uint32]int64),
-		NodeReports: make(map[string]NodeReport, 0),
-		AppReports:  make(map[string]AppReport, 0),
+		BadTxsMap:      make(map[uint32]int64),
+		NodeReports:    make(map[string]NodeReport, 0),
+		AppReports:     make(map[string]AppReport, 0),
+		TimelineReport: timelineReport,
 	}
 	log.Println("Looping through all of the block-txs and matching them with the corresponding claims")
 	for height, blockTx := range txsMap {
@@ -337,7 +349,7 @@ func ProcessChainData(txsMap BlockTxsMap, claimsMap ClaimsMap, supplyStart, supp
 			// add to the chain statistics
 			appReport.ServicedReportByChain[chainID] += totalRelays
 			nodeReport.ServiceReportByChain[chainID] += totalRelays
-			result.TotalRelaysCompleted+=totalRelays
+			result.TotalRelaysCompleted += totalRelays
 			// add an individual service report to the appReport
 			appReport.ServicedBy = append(appReport.ServicedBy, ServiceReport{
 				Address:     nodeAddress,
@@ -523,8 +535,8 @@ func GetClaims(height int64, config Config) (result []pcTypes.MsgClaim, err erro
 	}
 	state := StateRPCResponse{}
 	err = cdc.UnmarshalJSON(bodyBz, &state)
-	s:= string(bodyBz)
-	s=s
+	s := string(bodyBz)
+	s = s
 	return state.AppState.Claims, err
 }
 
