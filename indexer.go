@@ -15,7 +15,7 @@ import (
 	govTypes "github.com/pokt-network/pocket-core/x/gov"
 	nodeTypes "github.com/pokt-network/pocket-core/x/nodes/types"
 	pcTypes "github.com/pokt-network/pocket-core/x/pocketcore/types"
-	"github.com/tendermint/go-amino"
+	cryptoamino "github.com/tendermint/tendermint/crypto/encoding/amino"
 	coretypes "github.com/tendermint/tendermint/rpc/core/types"
 	"io/ioutil"
 	"log"
@@ -69,6 +69,8 @@ func init() {
 	appTypes.RegisterCodec(cdc)
 	govTypes.RegisterCodec(cdc)
 	crypto.RegisterAmino(cdc.AminoCodec().Amino)
+	cryptoamino.RegisterAmino(cdc.AminoCodec().Amino)
+	codec.RegisterEvidences(cdc.AminoCodec(), cdc.ProtoCodec())
 }
 
 type Timeline struct {
@@ -586,7 +588,7 @@ func GetBlock(height int64, config Config) (block *coretypes.ResultBlock, err er
 	if res.StatusCode != 200 {
 		return nil, NewHTTPStatusCode(res.StatusCode, string(bodyBz))
 	}
-	err = amino.NewCodec().UnmarshalJSON(bodyBz, &block)
+	err = cdc.UnmarshalJSON(bodyBz, &block)
 	return
 }
 
