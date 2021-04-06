@@ -31,3 +31,12 @@ Found in <path to relay_counter>/config/config.json
   
 ### TL;DR how it works
 With a simple config file, relay_counter uses binary search to find the nearest blocks to the start/end, then tallies up the relays using valid claims and proofs transactions. 
+
+You can pass arguments like a different `config` file path or a `results` file path. Also you can override on the fly with arguments any of the parameters that exists into the config.json.
+
+```bash
+go run ./... -config=test/config.json -results test/result.json -endpoint=https://some.node.com/v1
+```
+
+In any case you can use `-h` to see all the available options.
+
