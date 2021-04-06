@@ -79,6 +79,11 @@ type Timeline struct {
 	Unit  string `json:"unit"`
 }
 
+type ByBlock struct {
+	Start int64 `json:"start"`
+	End   int64 `json:"end"`
+}
+
 type PaginatedHeightParams struct {
 	Height  int64  `json:"height"`
 	Page    int    `json:"page,omitempty"`
@@ -122,7 +127,9 @@ type Report struct {
 	BadTxsMap                map[uint32]int64      `json:"bad_txs_count_by_error"`
 	NodeReports              map[string]NodeReport `json:"node_report"`
 	AppReports               map[string]AppReport  `json:"app_report"`
+	BlockSelector            string                `json:"selector"`
 	TimelineReport           TimelineReport        `json:"timeline_report"`
+	ByBlockReport            ByBlock               `json:"by_block"`
 }
 
 type ServiceReport struct {
@@ -274,13 +281,15 @@ func GetChainData(minHeight, maxHeight int64, config Config) (blockTxsMap BlockT
 	return
 }
 
-func ProcessChainData(txsMap BlockTxsMap, claimsMap ClaimsMap, supplyStart, supplyEnd int, timelineReport TimelineReport) (result Report) {
+func ProcessChainData(txsMap BlockTxsMap, claimsMap ClaimsMap, supplyStart, supplyEnd int, selector string, timelineReport TimelineReport, byBlock ByBlock) (result Report) {
 	log.Println("Chain Data Process Operation Started")
 	result = Report{
 		BadTxsMap:      make(map[uint32]int64),
 		NodeReports:    make(map[string]NodeReport, 0),
 		AppReports:     make(map[string]AppReport, 0),
+		BlockSelector:  selector,
 		TimelineReport: timelineReport,
+		ByBlockReport:  byBlock,
 	}
 	log.Println("Looping through all of the block-txs and matching them with the corresponding claims")
 	for height, blockTx := range txsMap {

@@ -40,3 +40,18 @@ go run ./... -config=test/config.json -results test/result.json -endpoint=https:
 
 In any case you can use `-h` to see all the available options.
 
+#### Config.json | CLI args
+| Config File Option             | CLI Arg           | Description                                                 | Options/Default                                      |
+|--------------------------------|-------------------|-------------------------------------------------------------|------------------------------------------------------|
+| -                              | -config           | config file path                                            | config/config.json                                   |
+| -                              | -results          | results file path                                           | result/<date>.json                                   |
+| selector                       | -selector         | Use this to point which method will you use to select block | timeline, byClock                                    |
+| timeline.start                 | -timelineStart    | used only when selector=timeline                            |                                                      |
+| timeline.end                   | -timelineEnd      | used only when selector=timeline                            |                                                      |
+| timeline.unit                  | -timelineUnit     | used only when selector=timeline                            | block[s],session[s],minute[s],hour[s],day[s],week[s] |
+| byBlock.start                  | -startBlock       | used only when selector=byBlock                             |                                                      |
+| byBlock.end                    | -endBlock         | used only when selector=byBlock                             |                                                      |
+| endpoint                       | -endpoint         | endpoint must be pocket-core version endpoint               |                                                      |
+| http_retry                     | -httpRetry        | how much retries will be done in case some endpoint fail    |                                                      |
+| params.block_per_session       | -blocksPerSession |                                                             |                                                      |
+| parms.approx_block_time_in_min | -blockTimeInMin   | approximate time before next block height been generated    |                                                      |
