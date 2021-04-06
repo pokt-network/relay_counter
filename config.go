@@ -9,7 +9,6 @@ import (
 	"net/http"
 	"os"
 	"strings"
-	"time"
 )
 
 type Config struct {
@@ -58,8 +57,7 @@ func (t *Timeline) UnmarshalJSON(data []byte) error {
 }
 
 // Gets the conf in the config file
-func getConfig() Config {
-	file := "config/config.json"
+func getConfig(file string) Config {
 	fBz, err := ioutil.ReadFile(file)
 	if err != nil {
 		log.Fatalf(err.Error())
@@ -91,15 +89,52 @@ func testEndpoint(endpoint string) error {
 	return nil
 }
 
-func writeResultFile(result Report) {
+func writeResultFile(result Report, file string) {
 	j, err := json.MarshalIndent(result, "", "    ")
 	if err != nil {
 		log.Fatal(err)
 	}
-	now := time.Now().AddDate(0, 0, -1).Format("01-02-06T15:04:05")
-	err = ioutil.WriteFile("result/"+now+".json", j, os.ModePerm)
+	err = ioutil.WriteFile(file, j, os.ModePerm)
 	if err != nil {
 		log.Println("ERROR : COULD NOT WRITE REPORT FILE: ", err.Error(), "\nPRINTING TO SCREEN")
 		fmt.Println(string(j))
 	}
+}
+
+func overrideConfig(
+	c Config,
+	timelineStart int64, timelineEnd int64, timelineUnit string,
+	endpoint string, httpRetry int,
+	blocksPerSession int64, blockTimeInMin int64,
+) Config {
+	log.Println("Processing command line overrides")
+	if timelineStart != -99999 {
+		c.Timeline.Start = timelineStart
+	}
+
+	if timelineEnd != -99999 {
+		c.Timeline.End = timelineEnd
+	}
+
+	if timelineUnit != "" {
+		c.Timeline.Unit = timelineUnit
+	}
+
+	if endpoint != "" {
+		c.Endpoint = endpoint
+	}
+
+	if httpRetry != -1 {
+		c.HTTPRetry = httpRetry
+	}
+
+	if blocksPerSession != -1 {
+		c.Params.BlocksPerSession = blocksPerSession
+	}
+
+	if blockTimeInMin != -1 {
+		c.Params.AppxBlockTimeInMinutes = blockTimeInMin
+	}
+
+	return c
 }
