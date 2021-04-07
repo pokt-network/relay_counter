@@ -12,7 +12,9 @@ import (
 )
 
 type Config struct {
+	Selector  string   `json:"selector"`
 	Timeline  Timeline `json:"timeline"`
+	ByBlock   ByBlock  `json:"byBlock"`
 	Endpoint  string   `json:"endpoint"`
 	HTTPRetry int      `json:"http_retry"`
 	Params    Params   `json:"params"`
@@ -103,11 +105,17 @@ func writeResultFile(result Report, file string) {
 
 func overrideConfig(
 	c Config,
+	selector string,
 	timelineStart int64, timelineEnd int64, timelineUnit string,
+	startBlock int64, endBlock int64,
 	endpoint string, httpRetry int,
 	blocksPerSession int64, blockTimeInMin int64,
 ) Config {
 	log.Println("Processing command line overrides")
+	if selector != "" {
+		c.Selector = selector
+	}
+
 	if timelineStart != -99999 {
 		c.Timeline.Start = timelineStart
 	}
@@ -118,6 +126,14 @@ func overrideConfig(
 
 	if timelineUnit != "" {
 		c.Timeline.Unit = timelineUnit
+	}
+
+	if startBlock != -99999 {
+		c.ByBlock.Start = startBlock
+	}
+
+	if endBlock != -99999 {
+		c.ByBlock.End = endBlock
 	}
 
 	if endpoint != "" {
