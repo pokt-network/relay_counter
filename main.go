@@ -50,9 +50,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	var minHeight, maxHeight int64
-	timelineReport := TimelineReport{}
-	byBlock := ByBlock{}
+	blockReport := BlockReport{}
 
 	if c.Selector == "timeline" {
 		log.Println("Converting Timeline To Block Heights")
@@ -60,23 +58,21 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		minHeight = report.MinHeight
-		maxHeight = report.MaxHeight
-		timelineReport = report
+		blockReport.MinHeight = report.MinHeight
+		blockReport.MaxHeight = report.MaxHeight
 	} else if c.Selector == "byBlock" {
 		log.Println("Using byBlock as block selector.")
-		minHeight = c.ByBlock.Start
-		maxHeight = c.ByBlock.End
-		byBlock = c.ByBlock
+		blockReport.MinHeight = c.ByBlock.Start
+		blockReport.MaxHeight = c.ByBlock.End
 	} else {
 		log.Fatal("selector must be one of following: timeline | byBlock")
 	}
 
 	log.Println("Beginning to retrieve the transactions and claims from the blockchain")
-	blockTxsMap, claimsMap, startSupply, endSupply := GetChainData(minHeight, maxHeight, c)
+	blockTxsMap, claimsMap, startSupply, endSupply := GetChainData(blockReport.MinHeight, blockReport.MaxHeight, c)
 	log.Println("Creating a report from the blockchain data")
-	result := ProcessChainData(blockTxsMap, claimsMap, startSupply, endSupply, c.Selector, timelineReport, byBlock)
-	log.Println("Writing the result to a report file under /result/<date>.json")
+	result := ProcessChainData(blockTxsMap, claimsMap, startSupply, endSupply, c.Selector, blockReport)
+	log.Println("Writing the result to a report file under " + *resultFilePath)
 	writeResultFile(result, *resultFilePath)
 	log.Println("Done")
 }
