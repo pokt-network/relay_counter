@@ -112,7 +112,7 @@ type SupplyRPCResponse struct {
 	Total string `json:"total"`
 }
 
-type TimelineReport struct {
+type BlockReport struct {
 	MinHeight int64 `json:"min_height"`
 	MaxHeight int64 `json:"max_height"`
 }
@@ -128,8 +128,7 @@ type Report struct {
 	NodeReports              map[string]NodeReport `json:"node_report"`
 	AppReports               map[string]AppReport  `json:"app_report"`
 	BlockSelector            string                `json:"selector"`
-	TimelineReport           TimelineReport        `json:"timeline_report"`
-	ByBlockReport            ByBlock               `json:"by_block"`
+	BlockReport              BlockReport           `json:"block_report"`
 }
 
 type ServiceReport struct {
@@ -153,7 +152,7 @@ type AppReport struct {
 type ClaimsMap map[int64][]pcTypes.MsgClaim
 type BlockTxsMap map[int64]rpc.RPCResultTxSearch
 
-func ConvertTimelineToHeights(config Config) (timelineReport TimelineReport, err error) {
+func ConvertTimelineToHeights(config Config) (blockReport BlockReport, err error) {
 	// start and end are negative values
 	var startInBlocks, endInBlocks, minHeight, maxHeight int64
 	var targetStartTime, targetEndTime time.Time
@@ -161,12 +160,12 @@ func ConvertTimelineToHeights(config Config) (timelineReport TimelineReport, err
 	// get the latest height
 	latestheight, err := GetLatestHeight(config)
 	if err != nil {
-		return timelineReport, err
+		return blockReport, err
 	}
 	log.Println("Getting the latest block")
 	block, err := GetBlock(latestheight, config)
 	if err != nil {
-		return timelineReport, err
+		return blockReport, err
 	}
 	latestHeight := block.Block.Height
 	latestTime := block.Block.Time
@@ -205,7 +204,7 @@ func ConvertTimelineToHeights(config Config) (timelineReport TimelineReport, err
 		err = NewInvalidMinimumHeightError(minHeight)
 		return
 	}
-	timelineReport = TimelineReport{
+	blockReport = BlockReport{
 		MinHeight: minHeight,
 		MaxHeight: maxHeight,
 	}
@@ -281,15 +280,14 @@ func GetChainData(minHeight, maxHeight int64, config Config) (blockTxsMap BlockT
 	return
 }
 
-func ProcessChainData(txsMap BlockTxsMap, claimsMap ClaimsMap, supplyStart, supplyEnd int, selector string, timelineReport TimelineReport, byBlock ByBlock) (result Report) {
+func ProcessChainData(txsMap BlockTxsMap, claimsMap ClaimsMap, supplyStart, supplyEnd int, selector string, blockReport BlockReport) (result Report) {
 	log.Println("Chain Data Process Operation Started")
 	result = Report{
-		BadTxsMap:      make(map[uint32]int64),
-		NodeReports:    make(map[string]NodeReport, 0),
-		AppReports:     make(map[string]AppReport, 0),
-		BlockSelector:  selector,
-		TimelineReport: timelineReport,
-		ByBlockReport:  byBlock,
+		BadTxsMap:     make(map[uint32]int64),
+		NodeReports:   make(map[string]NodeReport, 0),
+		AppReports:    make(map[string]AppReport, 0),
+		BlockSelector: selector,
+		BlockReport:   blockReport,
 	}
 	log.Println("Looping through all of the block-txs and matching them with the corresponding claims")
 	for height, blockTx := range txsMap {
