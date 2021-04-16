@@ -17,6 +17,7 @@ import (
 	pcTypes "github.com/pokt-network/pocket-core/x/pocketcore/types"
 	cryptoamino "github.com/tendermint/tendermint/crypto/encoding/amino"
 	coretypes "github.com/tendermint/tendermint/rpc/core/types"
+	"io"
 	"io/ioutil"
 	"log"
 	"math"
@@ -490,23 +491,26 @@ func GetBlockTx(height int64, config Config) (result rpc.RPCResultTxSearch, err 
 	if err != nil {
 		return result, err
 	}
-	req, err := http.NewRequest("POST", config.Endpoint+BlockTxsPath, bytes.NewBuffer(r))
+	res, err := http.Post(config.Endpoint+BlockTxsPath, "application/json", bytes.NewBuffer(r))
+
 	if err != nil {
 		return result, err
 	}
-	c := http.Client{}
-	res, err := c.Do(req)
-	if err != nil {
-		return result, err
-	}
-	defer res.Body.Close()
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+			log.Fatalf("Unable to close POST request to: " + config.Endpoint + BlockTxsPath + " " + err.Error())
+		}
+	}(res.Body)
 	bodyBz, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		return result, err
 	}
+
 	if res.StatusCode != 200 {
 		return result, NewHTTPStatusCode(res.StatusCode, string(bodyBz))
 	}
+
 	rts := &coretypes.ResultTxSearch{}
 	err = json.Unmarshal(bodyBz, &rts)
 	if err != nil {
@@ -521,52 +525,59 @@ func GetClaims(height int64, config Config) (result []pcTypes.MsgClaim, err erro
 		Height:  height,
 		PerPage: 10000000,
 	}
-	r, err := json.Marshal(requestBody)
+	body, err := json.Marshal(requestBody)
 	if err != nil {
 		return nil, err
 	}
-	req, err := http.NewRequest("POST", config.Endpoint+StatePath, bytes.NewBuffer(r))
+	res, err := http.Post(config.Endpoint+StatePath, "application/json", bytes.NewBuffer(body))
 	if err != nil {
 		return nil, err
 	}
-	c := http.Client{}
-	res, err := c.Do(req)
-	if err != nil {
-		return nil, err
-	}
-	defer res.Body.Close()
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+			log.Fatalf("Unable to close POST request to: " + config.Endpoint + StatePath + " " + err.Error())
+		}
+	}(res.Body)
 	bodyBz, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		return nil, err
 	}
+
 	if res.StatusCode != 200 {
 		return nil, NewHTTPStatusCode(res.StatusCode, string(bodyBz))
 	}
+
 	state := StateRPCResponse{}
 	err = cdc.UnmarshalJSON(bodyBz, &state)
-	s := string(bodyBz)
-	s = s
 	return state.AppState.Claims, err
 }
 
 func GetLatestHeight(config Config) (int64, error) {
-	req, err := http.NewRequest("POST", config.Endpoint+HeightPath, nil)
+	values := map[string]string{}
+	body, err := json.Marshal(values)
 	if err != nil {
 		return 0, err
 	}
-	c := http.Client{}
-	res, err := c.Do(req)
+	res, err := http.Post(config.Endpoint+HeightPath, "application/json", bytes.NewBuffer(body))
 	if err != nil {
 		return 0, err
 	}
-	defer res.Body.Close()
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+			log.Fatalf("Unable to close POST request to: " + config.Endpoint + HeightPath + " " + err.Error())
+		}
+	}(res.Body)
 	bodyBz, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		return 0, err
 	}
+
 	if res.StatusCode != 200 {
 		return 0, NewHTTPStatusCode(res.StatusCode, string(bodyBz))
 	}
+
 	height := HeightRPCResponse{}
 	err = json.Unmarshal(bodyBz, &height)
 	return height.Height, err
@@ -574,24 +585,25 @@ func GetLatestHeight(config Config) (int64, error) {
 
 func GetBlock(height int64, config Config) (block *coretypes.ResultBlock, err error) {
 	requestBody := PaginatedHeightParams{Height: height}
-	r, err := json.Marshal(requestBody)
+	body, err := json.Marshal(requestBody)
 	if err != nil {
 		return nil, err
 	}
-	req, err := http.NewRequest("POST", config.Endpoint+BlockPath, bytes.NewBuffer(r))
+	res, err := http.Post(config.Endpoint+BlockPath, "application/json", bytes.NewBuffer(body))
 	if err != nil {
 		return nil, err
 	}
-	c := http.Client{}
-	res, err := c.Do(req)
-	if err != nil {
-		return nil, err
-	}
-	defer res.Body.Close()
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+			log.Fatalf("Unable to close POST request to: " + config.Endpoint + BlockPath + " " + err.Error())
+		}
+	}(res.Body)
 	bodyBz, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		return nil, err
 	}
+
 	if res.StatusCode != 200 {
 		return nil, NewHTTPStatusCode(res.StatusCode, string(bodyBz))
 	}
@@ -605,16 +617,17 @@ func GetSupply(height int64, config Config) (supply int, err error) {
 	if err != nil {
 		return 0, err
 	}
-	req, err := http.NewRequest("POST", config.Endpoint+SupplyPath, bytes.NewBuffer(r))
+	res, err := http.Post(config.Endpoint+SupplyPath, "application/json", bytes.NewBuffer(r))
 	if err != nil {
 		return 0, err
 	}
-	c := http.Client{}
-	res, err := c.Do(req)
-	if err != nil {
-		return 0, err
-	}
-	defer res.Body.Close()
+	defer func(Body io.ReadCloser) {
+		err := Body.Close()
+		if err != nil {
+			log.Fatalf("Unable to close POST request to: " + config.Endpoint + SupplyPath + " " + err.Error())
+		}
+	}(res.Body)
+
 	bodyBz, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		return 0, err

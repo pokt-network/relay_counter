@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -73,21 +74,27 @@ func getConfig(file string) Config {
 }
 
 func testEndpoint(endpoint string) error {
-	r, err := http.NewRequest("GET", endpoint, nil)
-	if err != nil {
-		return err
-	}
-	c := http.Client{}
-	res, err := c.Do(r)
-	if err != nil {
-		return err
-	}
 	if endpoint[len(endpoint)-2:] != "v1" {
 		return fmt.Errorf("endpoint must be pocket-core version endpoint")
 	}
+
+	values := map[string]string{}
+	body, err := json.Marshal(values)
+
+	if err != nil {
+		return err
+	}
+
+	res, err := http.Post(endpoint+"/query/height", "application/json", bytes.NewBuffer(body))
+
+	if err != nil {
+		return err
+	}
+
 	if res.StatusCode != 200 {
 		return NewHTTPStatusCode(res.StatusCode, "")
 	}
+
 	return nil
 }
 
