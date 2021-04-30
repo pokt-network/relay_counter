@@ -197,6 +197,8 @@ github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af/go.mod h1:Nht
 github.com/jmhodges/levigo v1.0.0 h1:q5EC36kV79HWeTBWsod3mG11EgStG3qArTKcvlksN1U=
 github.com/jmhodges/levigo v1.0.0/go.mod h1:Q6Qx+uH3RAqyK4rFQroq9RL7mdkABMcfhEI+nNuzMJQ=
 github.com/jonboulle/clockwork v0.1.0/go.mod h1:Ii8DK3G1RaLaWxj9trq07+26W01tbo22gdxWY5EU2bo=
+github.com/jordanorelli/lexnum v0.0.0-20141216151731-460eeb125754 h1:ovgRFhVUYZWz6KnWPrnV7HBxrK0ErOeyXtlVvh0Rr5k=
+github.com/jordanorelli/lexnum v0.0.0-20141216151731-460eeb125754/go.mod h1:f1WdQhB98V35bULPsZUMFP9U1XWhpaHrO6myMijgMhU=
 github.com/jrick/logrotate v1.0.0/go.mod h1:LNinyqDIJnpAur+b8yyulnQw/wDuN1+BYKlTRt3OuAQ=
 github.com/json-iterator/go v1.1.6/go.mod h1:+SdeFBvtyEkXs7REEP0seUULqWtbJapLOCVDaaPEHmU=
 github.com/json-iterator/go v1.1.7/go.mod h1:KdQUCv79m/52Kvf8AW2vK1V8akMuk1QjK/uOdHXbAo4=
@@ -291,10 +293,14 @@ github.com/pokt-network/pocket-core v0.0.0-20210114231548-e7b0dd832423 h1:c0YVPL
 github.com/pokt-network/pocket-core v0.0.0-20210114231548-e7b0dd832423/go.mod h1:Y6AiRWZMXI87AfDl3Ib3uX6UN7VFOD/m8shmNpwUYhY=
 github.com/pokt-network/pocket-core v0.0.0-20210121232307-0152f9076bdf h1:1IfSTkchP6QBjSTqY5FWe2MCPYNtlQTUxQZmR3e/7qQ=
 github.com/pokt-network/pocket-core v0.0.0-20210121232307-0152f9076bdf/go.mod h1:Y6AiRWZMXI87AfDl3Ib3uX6UN7VFOD/m8shmNpwUYhY=
+github.com/pokt-network/pocket-core v0.0.0-20210429190449-f794bc74b167 h1:1FmJuRVP+RiIJJYZYRP7o0UJO3wSIwzgyu56uZMwz4w=
+github.com/pokt-network/pocket-core v0.0.0-20210429190449-f794bc74b167/go.mod h1:yMJjpIht80lU2857y90gnNVi3FSuGvnpOqmDXz+cMAM=
 github.com/pokt-network/tendermint v0.32.11-0.20201215233333-6520bc46e538 h1:zwgMCwqhS317vnhJGez31ToQP77ga4wIbIje+rFfYbA=
 github.com/pokt-network/tendermint v0.32.11-0.20201215233333-6520bc46e538/go.mod h1:AO+KV7pmYJ2xI1GKa6xh9I1KJYvVoWYvofxG9h33xms=
 github.com/pokt-network/tendermint v0.32.11-0.20210113203729-f92374107ace h1:ZXh9O4t5NFORQv4onHzM5P6xRLd9y+cjdHwF+HQzcOg=
 github.com/pokt-network/tendermint v0.32.11-0.20210113203729-f92374107ace/go.mod h1:AO+KV7pmYJ2xI1GKa6xh9I1KJYvVoWYvofxG9h33xms=
+github.com/pokt-network/tendermint v0.32.11-0.20210427155510-04e1c67f3eed h1:viQQSd19s4C4nTtFdCRJHm44a9IjW63Vs1oAqZItqSA=
+github.com/pokt-network/tendermint v0.32.11-0.20210427155510-04e1c67f3eed/go.mod h1:AO+KV7pmYJ2xI1GKa6xh9I1KJYvVoWYvofxG9h33xms=
 github.com/posener/complete v1.1.1/go.mod h1:em0nMJCgc9GFtwrmVmEMR/ZL6WyhyjMBndrE9hABlRI=
 github.com/prometheus/client_golang v0.9.1/go.mod h1:7SWBe2y4D6OKWSNQJUaRYU/AaXPKyh/dDVn+NZz0KFw=
 github.com/prometheus/client_golang v0.9.3-0.20190127221311-3c4408c8b829/go.mod h1:p2iRAGwDERtqlqzRXnrOVns+ignqQo//hLXqYxZYVNs=

@@ -30,7 +30,7 @@ import (
 
 const (
 	BlockTxsPath = "/query/blocktxs"
-	StatePath    = "/query/state"
+	ClaimsPath   = "/query/nodeclaims"
 	HeightPath   = "/query/height"
 	BlockPath    = "/query/block"
 	SupplyPath   = "/query/supply"
@@ -92,16 +92,10 @@ type PaginatedHeightParams struct {
 	Sort    string `json:"order,omitempty"`
 }
 
-type AppState struct {
-	PocketCoreState `json:"pocketcore"`
-}
-
-type PocketCoreState struct {
-	Claims []pcTypes.MsgClaim `json:"claims"`
-}
-
-type StateRPCResponse struct {
-	AppState AppState `json:"app_state"`
+type ClaimsRPCResponse struct {
+	Claims []pcTypes.MsgClaim `json:"result"`
+	Total  int         `json:"total_pages"`
+	Page   int         `json:"page"`
 }
 
 type HeightRPCResponse struct {
@@ -220,24 +214,33 @@ func GetChainData(minHeight, maxHeight int64, config Config) (blockTxsMap BlockT
 	log.Printf("Begin transactions / claims retrieval for heights: %d through %d\n", minHeight, maxHeight)
 	for height := minHeight; height < maxHeight; height++ {
 		if _, ok := blockTxsMap[height]; !ok {
-			result, err := GetBlockTx(height, config)
-			if err != nil {
-				if count >= config.HTTPRetry {
-					log.Fatalf("After %d retries, unable to get block-txs for height: %d with error: %s", config.HTTPRetry, height, err.Error())
-				} else {
-					log.Printf("RPC failure for blocktxs: %s. Trying to retry. Retry count is: %d/%d\n", err.Error(), count, config.HTTPRetry)
-					count++
-					height-- // try the same height again
-					// arbitrary sleep to retry
-					time.Sleep(1 * time.Second)
-					continue
+			result := rpc.RPCResultTxSearch{TotalCount: 1}
+			var err error
+			for page := 0; ; page++ {
+				result, err = GetBlockTx(height, page, config)
+				if err != nil {
+					if count >= config.HTTPRetry {
+						log.Fatalf("After %d retries, unable to get block-txs for height: %d at page %d with error: %s", config.HTTPRetry, height, page, err.Error())
+					} else {
+						log.Printf("RPC failure for blocktxs: %s. Trying to retry. Retry count is: %d/%d\n", err.Error(), count, config.HTTPRetry)
+						count++
+						page-- // try the same height again
+						result = rpc.RPCResultTxSearch{TotalCount: 1}
+						// arbitrary sleep to retry
+						time.Sleep(1 * time.Second)
+						continue
+					}
 				}
-			} else {
-				log.Printf("BlkTxs retrieved for height: %d, %d out of %d\n", height, height-minHeight, maxHeight-minHeight)
-				// add the block-txs to the result
-				blockTxsMap[height] = result
+				if result.TotalCount == 0 {
+					break
+				}
+				cur := blockTxsMap[height]
+				cur.TotalCount += result.TotalCount
+				cur.Txs = append(cur.Txs, result.Txs...)
+				blockTxsMap[height] = cur
 				count = 0
 			}
+			log.Printf("BlkTxs retrieved for height: %d, %d out of %d\n", height, height-minHeight, maxHeight-minHeight)
 		}
 		// skip claims for blocks 0 and 1
 		if height == 0 || height == 1 {
@@ -481,10 +484,11 @@ func IsCloserThan(check, other, target time.Time) bool {
 	return true
 }
 
-func GetBlockTx(height int64, config Config) (result rpc.RPCResultTxSearch, err error) {
+func GetBlockTx(height int64, page int, config Config) (result rpc.RPCResultTxSearch, err error) {
 	requestBody := PaginatedHeightParams{
 		Height:  height,
-		PerPage: 10000000,
+		PerPage: 1000,
+		Page:    page,
 	}
 	r, err := json.Marshal(requestBody)
 	if err != nil {
@@ -519,13 +523,13 @@ func GetBlockTx(height int64, config Config) (result rpc.RPCResultTxSearch, err 
 func GetClaims(height int64, config Config) (result []pcTypes.MsgClaim, err error) {
 	requestBody := PaginatedHeightParams{
 		Height:  height,
-		PerPage: 10000000,
+		PerPage: 10000, // TODO will fail if over 10K claims in 1 block
 	}
 	r, err := json.Marshal(requestBody)
 	if err != nil {
 		return nil, err
 	}
-	req, err := http.NewRequest("POST", config.Endpoint+StatePath, bytes.NewBuffer(r))
+	req, err := http.NewRequest("POST", config.Endpoint+ClaimsPath, bytes.NewBuffer(r))
 	if err != nil {
 		return nil, err
 	}
@@ -542,11 +546,9 @@ func GetClaims(height int64, config Config) (result []pcTypes.MsgClaim, err erro
 	if res.StatusCode != 200 {
 		return nil, NewHTTPStatusCode(res.StatusCode, string(bodyBz))
 	}
-	state := StateRPCResponse{}
-	err = cdc.UnmarshalJSON(bodyBz, &state)
-	s := string(bodyBz)
-	s = s
-	return state.AppState.Claims, err
+	state := ClaimsRPCResponse{}
+	err = json.Unmarshal(bodyBz, &state)
+	return state.Claims, err
 }
 
 func GetLatestHeight(config Config) (int64, error) {
@@ -650,14 +652,29 @@ func ResultTxToRPC(res *coretypes.ResultTx) *rpc.RPCResultTx {
 		return nil
 	}
 	tx := UnmarshalTx(res.Tx, res.Height)
+	//if app.GlobalConfig.PocketConfig.DisableTxEvents {
+	res.TxResult.Events = nil
+	//}
+	rpcDeliverTx := rpc.RPCResponseDeliverTx{
+		Code:        res.TxResult.Code,
+		Data:        res.TxResult.Data,
+		Log:         res.TxResult.Log,
+		Info:        res.TxResult.Info,
+		Events:      res.TxResult.Events,
+		Codespace:   res.TxResult.Codespace,
+		Signer:      res.TxResult.Signer,
+		Recipient:   res.TxResult.Recipient,
+		MessageType: res.TxResult.MessageType,
+	}
+	rpcStdTx := rpc.RPCStdTx(tx)
 	r := &rpc.RPCResultTx{
 		Hash:     res.Hash,
 		Height:   res.Height,
 		Index:    res.Index,
-		TxResult: res.TxResult,
+		TxResult: rpcDeliverTx,
 		Tx:       res.Tx,
 		Proof:    res.Proof,
-		StdTx:    tx,
+		StdTx:    rpcStdTx,
 	}
 	return r
 }

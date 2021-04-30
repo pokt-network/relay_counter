@@ -1,9 +1,9 @@
 {
   "selector": "timeline",
   "timeline": {
-    "start": -4,
-    "end": -1,
-    "unit": "days"
+    "start": -1,
+    "end": 0,
+    "unit": "day"
   },
   "byBlock": {
     "start": 0,
