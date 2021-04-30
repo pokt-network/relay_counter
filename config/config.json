@@ -1,13 +1,13 @@
 {
-  "selector": "timeline",
+  "selector": "byBlock",
   "timeline": {
     "start": -1,
     "end": 0,
     "unit": "day"
   },
   "byBlock": {
-    "start": 0,
-    "end": 0
+    "start": 24737,
+    "end": 24738
   },
   "endpoint": "http://localhost:8081/v1",
   "http_retry": 3,

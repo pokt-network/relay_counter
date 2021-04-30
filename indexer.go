@@ -271,12 +271,12 @@ func GetChainData(minHeight, maxHeight int64, config Config) (blockTxsMap BlockT
 	}
 	log.Println("Getting starting supply")
 	// get the beginning and end supply
-	supplyStart, err := GetSupply(minHeight, config)
+	supplyStart, err := GetSupply(minHeight-1, config)
 	if err != nil {
 		log.Fatalf("unable to get the supply at height: %d with error %s", minHeight, err.Error())
 	}
 	log.Println("Getting ending supply")
-	supplyEnd, err = GetSupply(maxHeight, config)
+	supplyEnd, err = GetSupply(maxHeight-1, config)
 	if err != nil {
 		log.Fatalf("unable to get the supply at height: %d with error %s", maxHeight, err.Error())
 	}
