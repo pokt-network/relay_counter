@@ -216,7 +216,7 @@ func GetChainData(minHeight, maxHeight int64, config Config) (blockTxsMap BlockT
 		if _, ok := blockTxsMap[height]; !ok {
 			result := rpc.RPCResultTxSearch{TotalCount: 1}
 			var err error
-			for page := 0; ; page++ {
+			for page := 1; ; page++ {
 				result, err = GetBlockTx(height, page, config)
 				if err != nil {
 					if count >= config.HTTPRetry {
