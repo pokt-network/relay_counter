@@ -48,7 +48,7 @@ In any case you can use `-h` to see all the available options.
 |--------------------------------|-------------------|-------------------------------------------------------------|------------------------------------------------------|
 | -                              | -config           | config file path                                            | config/config.json                                   |
 | -                              | -results          | results file path                                           | result/<date>.json                                   |
-| selector                       | -selector         | Use this to point which method will you use to select block | timeline, byClock                                    |
+| selector                       | -selector         | Use this to point which method will you use to select block | timeline, byBlock                                    |
 | timeline.start                 | -timelineStart    | used only when selector=timeline                            |                                                      |
 | timeline.end                   | -timelineEnd      | used only when selector=timeline                            |                                                      |
 | timeline.unit                  | -timelineUnit     | used only when selector=timeline                            | block[s],session[s],minute[s],hour[s],day[s],week[s] |
