@@ -214,7 +214,7 @@ func GetChainData(minHeight, maxHeight int64, config Config) (blockTxsMap BlockT
 	log.Printf("Begin transactions / claims retrieval for heights: %d through %d\n", minHeight, maxHeight)
 	for height := minHeight; height < maxHeight; height++ {
 		if _, ok := blockTxsMap[height]; !ok {
-			result := rpc.RPCResultTxSearch{TotalCount: 1}
+			result := rpc.RPCResultTxSearch{TotalTxs: 1}
 			var err error
 			for page := 1; ; page++ {
 				result, err = GetBlockTx(height, page, config)
@@ -225,17 +225,17 @@ func GetChainData(minHeight, maxHeight int64, config Config) (blockTxsMap BlockT
 						log.Printf("RPC failure for blocktxs: %s. Trying to retry. Retry count is: %d/%d\n", err.Error(), count, config.HTTPRetry)
 						count++
 						page-- // try the same height again
-						result = rpc.RPCResultTxSearch{TotalCount: 1}
+						result = rpc.RPCResultTxSearch{TotalTxs: 1}
 						// arbitrary sleep to retry
 						time.Sleep(1 * time.Second)
 						continue
 					}
 				}
-				if result.TotalCount == 0 {
+				if result.PageCount == 0 {
 					break
 				}
 				cur := blockTxsMap[height]
-				cur.TotalCount += result.TotalCount
+				cur.TotalTxs += result.TotalTxs
 				cur.Txs = append(cur.Txs, result.Txs...)
 				blockTxsMap[height] = cur
 				count = 0
@@ -310,7 +310,7 @@ func ProcessChainData(txsMap BlockTxsMap, claimsMap ClaimsMap, supplyStart, supp
 				continue
 			}
 			// this is a proof msg
-			proofMsg, ok := txResult.StdTx.Msg.(pcTypes.MsgProof)
+			proofMsg, ok := txResult.StdTx.Msg.(*pcTypes.MsgProof)
 			if !ok {
 				log.Fatalf(NewProofMsgInterfaceError().Error())
 			}
@@ -320,7 +320,7 @@ func ProcessChainData(txsMap BlockTxsMap, claimsMap ClaimsMap, supplyStart, supp
 			claim := pcTypes.MsgClaim{}
 			// find the corresponding claim
 			for _, c := range claimsMap[height] {
-				if !c.FromAddress.Equals(proofMsg.GetSigner()) {
+				if !c.FromAddress.Equals(proofMsg.GetSigners()[0]) {
 					continue
 				}
 				claim = c
@@ -523,7 +523,7 @@ func GetBlockTx(height int64, page int, config Config) (result rpc.RPCResultTxSe
 func GetClaims(height int64, config Config) (result []pcTypes.MsgClaim, err error) {
 	requestBody := PaginatedHeightParams{
 		Height:  height,
-		PerPage: 10000, // TODO will fail if over 10K claims in 1 block
+		PerPage: 20000, // TODO will fail if over 20K claims in 1 block
 	}
 	r, err := json.Marshal(requestBody)
 	if err != nil {
@@ -637,9 +637,11 @@ func ResultTxSearchToRPC(res *coretypes.ResultTxSearch) rpc.RPCResultTxSearch {
 	if res == nil {
 		return rpc.RPCResultTxSearch{}
 	}
+	pageCount := len(res.Txs)
 	rpcTxSearch := rpc.RPCResultTxSearch{
-		Txs:        make([]*rpc.RPCResultTx, 0, res.TotalCount),
-		TotalCount: res.TotalCount,
+		Txs:       make([]*rpc.RPCResultTx, 0, res.TotalCount),
+		PageCount: pageCount,
+		TotalTxs:  res.TotalCount,
 	}
 	for _, result := range res.Txs {
 		rpcTxSearch.Txs = append(rpcTxSearch.Txs, ResultTxToRPC(result))

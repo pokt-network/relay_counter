@@ -2,12 +2,12 @@
 A simple tool that counts relays during a time period
 
 ### Prerequisite
-Requires a full node of Pocket Core RC-0.6.2 or higher
+Requires a full node of Pocket Core RC-0.8.2 or higher
 
 ### How To Use
 
 1) Ensure golang 1.13+ environment is properly installed
-2) Sync (RC-0.6.2) Pocket Core Instance (ensure completely synced)
+2) Sync (RC-0.8.2) Pocket Core Instance (ensure completely synced)
 3) go get github.com/pokt-network/relay_counter
 4) cd <GOPATH>/src/github.com/pokt-network/relay_counter
 5) Edit configuration file (See details below)
@@ -31,9 +31,9 @@ Found in <path to relay_counter>/config/config.json
   }
 }
 ```
-  
+
 ### TL;DR how it works
-With a simple config file, relay_counter uses binary search to find the nearest blocks to the start/end, then tallies up the relays using valid claims and proofs transactions. 
+With a simple config file, relay_counter uses binary search to find the nearest blocks to the start/end, then tallies up the relays using valid claims and proofs transactions.
 
 You can pass arguments like a different `config` file path or a `results` file path. Also you can override on the fly with arguments any of the parameters that exists into the config.json.
 
